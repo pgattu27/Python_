@@ -1,3 +1,0 @@
-with open ('123test.txt', 'r') as file:
-  data = sorted(map(int, file.readline().split(',')))
-  print (data)
