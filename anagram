@@ -1,0 +1,21 @@
+def anagram(text1, text2):
+  n1 = len(text1)
+  n2 = len(text2)
+  
+  if n1 != n2:
+    return 0
+  text1 = sorted(text1)
+  text2 = sorted(text2)
+  
+  for i in range (0, n1):
+    if text1[i] != text2[i]:
+      return 0
+  return 1
+  
+text1 = 'silent'
+text2 = 'listen'
+
+if anagram(text1, text2):
+  print('yes') 
+else:
+  print('no')
