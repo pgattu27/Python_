@@ -1,0 +1,8 @@
+with open('num.txt', 'r') as file:
+  data = sorted(map(int, file.readline().split(',')))
+  
+ largest1 = max(data)
+ data.remove(largest1)
+ largest2 = max(data)
+ print(largest1, largest2)
+ 
