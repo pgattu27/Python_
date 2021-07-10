@@ -1,0 +1,13 @@
+import firebase_admin
+from firebase_admin import credentials, firestore
+cred = credentials.Certificate("/Users/pravalikagattu/Documents/private_key.json")
+firebase_admin.initialize_app(cred)
+
+#initialize database
+db = firestore.client()
+collection = db.collection('component_id')
+print(f'1- share-music' , f'2- Login', f'3- Premium', f'4- playlist', f'5- upload_music')
+num = input ('choose one of the above components: ')
+val = collection.where('component', '==', num ).stream()
+for doc in val:
+  print (f'{doc.id} => {doc.to_dict()}')
