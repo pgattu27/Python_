@@ -6,7 +6,7 @@ firebase_admin.initialize_app(cred)
 #initialize database
 db = firestore.client()
 collection = db.collection('component_id')
-print(f'1- share-music' , f'2- Login', f'3- Premium', f'4- playlist', f'5- upload_music')
+print(f'share_music' , f'Login', f'Premium', f'playlist', f'upload_music')
 num = input ('choose one of the above components: ')
 val = collection.where('component', '==', num ).stream()
 for doc in val:
